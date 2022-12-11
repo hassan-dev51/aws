@@ -1,0 +1,22 @@
+type Query {
+  getTodo: [Todo]
+}
+
+# adTodo and updateTodo are both functions
+type Mutation {
+  addTodo(todo: TodoInput!): Todo
+  updateTodo(id: ID!, title: String!, done: Boolean!): Todo
+}
+
+type Todo {
+  id: ID!
+  title: String!
+  done: Boolean!
+}
+# we need input field to addTodo
+
+input TodoInput {
+  id: ID!
+  title: String!
+  done: Boolean!
+}
